@@ -95,6 +95,41 @@ INSERT INTO cats(name, age)
 VALUES ('Charlie', 10),
        ('bllue',4);
 ```
+## Show the warning details
+```
+SHOW WARNINGS;
+```
+if in your system, it gives error when your data type or data entry length does not match with what it has to be you can fix it with 
+```
+set sql_mode='';
+```
+
+## make NOT Null and DEfault value
+add NOT null as the third argument to create your table
+```
+CREATE TABLE cats4
+  (
+    name VARCHAR(20) NOT NULL DEFAULT 'unnamed',
+    age INT NOT NULL DEFAULT 99
+  );
+  ```
+
+  ## Primary Keys
+  if yyou want to have a unique entry in each row you can use the concept of the primary key with auto-increment in order to creat e aunique id for each entry
+  ```
+CREATE TABLE employeas (
+id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+first_name VARCHAR(255) NOT NULL,
+last_name VARCHAR(255) NOT NULL,
+middle_name VARCHAR(255) ,
+age INT NOT NULL,
+current_status VARCHAR(255) NOT NULL DEFAULT 'employed'
+);
+
+INSERT INTO employeas (first_name, last_name, age) VALUES
+('Dora', 'smith', 58);
+
+  ```
 
 
 
