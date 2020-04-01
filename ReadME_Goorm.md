@@ -89,7 +89,7 @@ INSERT INTO table_name(column_name1, column_name2) VALUES (val1,val2);
 select*from tableName;
 ```
 
-## Bulk insert data inti tables
+## Bulk insert data into tables
 ```
 INSERT INTO cats(name, age)
 VALUES ('Charlie', 10),
@@ -104,7 +104,7 @@ if in your system, it gives error when your data type or data entry length does 
 set sql_mode='';
 ```
 
-## make NOT Null and DEfault value
+## make NOT Null and Default value
 add NOT null as the third argument to create your table
 ```
 CREATE TABLE cats4
@@ -131,7 +131,47 @@ INSERT INTO employeas (first_name, last_name, age) VALUES
 
   ```
 
+## Read the data form the table in a database
+Note: order matters
+```
+SELECT * FROM <tabkeNAme>;
+SELECT <name>, <age> FROM <tableName>;
+```
 
+## WHERE clause for selecting a particular row
+the name is case insensitive
+```
+SELECT * FROM cats WHERE age=4;
+SELECT cat_id, age FROM cats WHERE cat_id > age;
+```
+
+## Aliase
+This is usefull when we want to change the name of the output
+```
+SELECT cat_id AS id, name FROM cats;
+ 
+SELECT name AS 'cat name', breed AS 'kitty breed' FROM cats;
+ 
+DESC cats;
+```
+
+## Update an entry in a table
+```
+UPDATE cats SET age=14 WHERE name='Misty';
+```
+Note: as a rule of thumb lets always use select to make sure that we are updating the right data. There is no undo button or actions, so make sure to not change anything by mistake.
+
+NOTE: for the update, we can do multiple updates by sperating them with comma
+
+## Delete an entry in the table
+```
+DELETE FROM cats WHERE name = 'egg';
+```
+## Run a sql script
+in order to run the sql script in the shell, make sure you run the mysql in the corect path of the sql file and then enter
+``` 
+source <file_name>.sql;
+```
 
 
 
