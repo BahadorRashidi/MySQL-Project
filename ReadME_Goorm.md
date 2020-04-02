@@ -173,6 +173,41 @@ in order to run the sql script in the shell, make sure you run the mysql in the 
 source <file_name>.sql;
 ```
 
+## CONCAT for better looking output
+This for combining the string
+CONCAT(x,y,z)
+```
+SELECT CONCAT(author_fname, ' ' , author_lname) AS full_name FROM books;
+```
+
+## CONCAT_WS
+concat with seperator
+
+The first entry would be the seperator between each piece.
+```
+SELECT 
+    CONCAT_WS(' - ', title, author_fname, author_lname) 
+FROM books;
+```
+## Select the substring
+```
+SELECT SUBSTRING('Hello World',1,4)
+SELECT SUBSTRING('Hello World',7) -- IT gives you the substring from that number all the way to the end
+
+SELECT SUBSTRING('Hello World',-4) -- start from the index starting from the end and go to the right
+
+-- A use case for this fucntion to create a short tile
+SELECT CONCAT
+    (
+        SUBSTRING(title, 1, 10),
+        '...'
+    ) AS 'short title'
+FROM books;
+ 
+source book_code.sql
+
+
+```
 
 
 
