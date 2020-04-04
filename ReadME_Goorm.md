@@ -168,14 +168,22 @@ NOTE: for the update, we can do multiple updates by sperating them with comma
 DELETE FROM cats WHERE name = 'egg';
 ```
 ## Run a sql script
-in order to run the sql script in the shell, make sure you run the mysql in the corect path of the sql file and then enter
+in order to run the sql script in the shell, make sure you run the mysql in the corect path of the sql file and then enter.
+
+How: 
+```
+source C:\Users\Bahador\Desktop\GoogleDrive\MySQL Course\Priliminaries Code\MySQL-Project/short_title.sql
+```
+make sure to bot put ; at the nd of the command line
+
+
 ``` 
 source <file_name>.sql;
 ```
 
 ## CONCAT for better looking output
 This for combining the string
-CONCAT(x,y,z)
+CONCAT(x,y,z). This function return the custome concatenated string from the selected table.
 ```
 SELECT CONCAT(author_fname, ' ' , author_lname) AS full_name FROM books;
 ```
@@ -206,8 +214,30 @@ FROM books;
  
 source book_code.sql
 
-
 ```
+
+## Replace the char in string
+This is good when we want to replace some character in a string. WE can also mix the replace command with others suchas concat or substring.
+```
+SELECT CONCAT(SUBSTRING(REPLACE(title,'e','3'),1,10),'...') FROM books;
+```
+
+## REVERSE
+this function reverse the string as it is
+```
+SELECT REVERSE('WOOOOOF');
+```
+
+## Find the mength of the string
+count the number of chars in a string
+```
+SELECT CHAR_LENGTH('Hello world klaksjdlkasjdlaksdj');
+```
+Note: we can always use sql-format.com to format the sql scripts for nicer look.
+
+
+
+
 
 
 
