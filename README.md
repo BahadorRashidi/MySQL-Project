@@ -1,26 +1,5 @@
-# MySQL-Project
+# Some basic Cncept and general information about SQL 
 Including different set of codes for MYSQL
-
-## Some usefull command for the first part of the course
-SELECT * FROM NameOfTables
-
-This just select the tables and show it
-
-*SELECT * FROM NameOfTables ORDER BY columnOfTable DESC*
-
-This shows the result in the descending order for the selected column
-
-
-*SELECT
-	customerName, 
-    COUNT(*) AS 'Number of orders'
-From customers
-INNER JOIN orders 
-	ON orders.customerID = customers.customerID
-GROUP By customers.customerID;*
-
-This is for counting the number of the orders by joining two different tables
-
 
 
 

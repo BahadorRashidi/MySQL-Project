@@ -228,17 +228,116 @@ this function reverse the string as it is
 SELECT REVERSE('WOOOOOF');
 ```
 
-## Find the mength of the string
+## Find the length of the string
 count the number of chars in a string
 ```
 SELECT CHAR_LENGTH('Hello world klaksjdlkasjdlaksdj');
 ```
 Note: we can always use sql-format.com to format the sql scripts for nicer look.
 
+## Change the upper and lower cases
+```
+SELECT UPPER('hello world);
+SELECT LOWER('HELLO WORLD HEY');
+```
+Note: order of the condition here somehow matters. UPPER only takes one argument and CONCAT takes two or more arguments, so they can't be switched in that way.
+
+---------------------------------------
+
+# some good weapons
+
+## DISTINCT
+```
+SELECT DISTINCT author_lname FROM books;
+```
+and
+```
+SELECT DISTINCT author_fname, author_lname FROM books;
+```
+
+## Order by (sorting)
+Ascending by default
+```
+SELECT author_lname from books ORDER BY author_lname;
+```
+to chabge it we can do it as ;
+```
+SELECT title from books ORDER BY title DESC;
+```
+or we can add ASC for asceding order
+
+What doe sth efollowing mean?
+```
+SELECT title, author_fname, author_lname from books ORDER BY 2;
+```
+that number 2 refers to the secend argument
 
 
+If you wanna sort by two different argument
+```
+SELECT auhtor_fname, author_lname from Books ORDER BY ahtor_lname, author_fname;
+```
+this stament will first wort them by the author_lname and then as the second layer will sort it by author_fname.
 
 
+## limit the number of show (LIMIT)
+```
+SELECT title FROM books LIMIT 3;
+```
+another example
+```
+SELECT title, released_year FROM books ORDER BY released_year LIMIT 5;
+SELECT title, released_year FROM books 
+ORDER BY released_year DESC LIMIT 1,3;
+```
+if you put a giagantic number as the cap limit, it will show all the rows that it has.
+```
+SELECT title, released_year FROM books LIMIT 8,3;
+```
+This means that show from the index 8 to the next 3.
+
+
+## LIKE for better searching
+helps for better general searching
+```
+SELECT title, author_fname from books where author_fname like '%da%';
+```
+```
+SELECT title, author_fname from books where author_fname like 'da%';
+```
+if the first wildcard is gone, the it will look for the fname that exactly start with 'da'
+
+
+Here is all the combination at once
+```
+SELECT title, author_fname FROM books WHERE author_fname LIKE '%da%';
+ 
+SELECT title, author_fname FROM books WHERE author_fname LIKE 'da%';
+ 
+SELECT title FROM books WHERE  title LIKE 'the';
+ 
+SELECT title FROM books WHERE  title LIKE '%the';
+ 
+SELECT title FROM books WHERE title LIKE '%the%';
+```
+
+## Anothre importatn wildcard
+if you want to search based on the numbe of characters that is the length of the 
+```
+SELECT title, stock_quantity FROM books;
+ 
+SELECT title, stock_quantity FROM books WHERE stock_quantity LIKE '____';
+ 
+SELECT title, stock_quantity FROM books WHERE stock_quantity LIKE '__';
+ 
+(235)234-0987 LIKE '(___)___-____'
+ 
+SELECT title FROM books;
+ 
+SELECT title FROM books WHERE title LIKE '%\%%'
+ 
+SELECT title FROM books WHERE title LIKE '%\_%'
+```
 
 
 
