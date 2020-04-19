@@ -50,7 +50,7 @@ SELECT title, released_year, stock_quantity FROM books ORDER BY 3 LIMIT 0,3;
 SELECT title, author_lname FROM books ORDER BY 2,1;
 */
 
-SELECT CONCAT('MY FAVORITE AUTHOR IS ', author_fname, ' ',author_lname,'!') AS yell FROM books ORDER BY author_lname; 
+-- SELECT CONCAT('MY FAVORITE AUTHOR IS ', author_fname, ' ',author_lname,'!') AS yell FROM books ORDER BY author_lname; 
 
 
 
@@ -58,8 +58,25 @@ SELECT CONCAT('MY FAVORITE AUTHOR IS ', author_fname, ' ',author_lname,'!') AS y
 
 
 
+-- =================================== Aggeregate practice sessions =====================
+
+-- print the number of books in the database
+
+SELECT SUM(stock_quantity) FROM books;
 
 
+SELECT released_year, COUNT(*) from books GROUP BY released_year;
+
+
+SELECT author_fname, author_lname, AVG(released_year) From books GROUP BY author_fname, author_lname;
+
+SELECT CONCAT(author_fname, ' ' , author_lname) AS full_name, pages FROM books ORDER BY pages DESC LIMIT 1;
+
+
+SELECT CONCAT(author_fname, ' ' , author_lname) AS full_name from books where pages = (select max(pages) from books);
+
+
+SELECT released_year AS Year, COUNT(*) AS '\# books', AVG(pages) AS 'avg pages' FROM books GROUP BY released_year ORDER BY 1;
 
 
 
