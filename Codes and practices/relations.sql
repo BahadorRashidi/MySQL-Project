@@ -42,7 +42,8 @@ SELECT * FROM customer, orders;
 SELECT * FROM customer, orders WHERE customer.id = orders.customer_id;
 
 	
-	
+SELECT * from customer JOIN orders On orders.customer_id = customer.id;
+		
 	
 	
 	

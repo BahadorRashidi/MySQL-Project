@@ -104,7 +104,8 @@ released_year % 2 != 0 ORDER BY released_year;
 
 ## CASE STATEMENTS
 These are provide the ability of else and if condition in MYSQL programming
-```\SELECT title, stock_quantity,
+```
+SELECT title, stock_quantity,
     CASE 
         WHEN stock_quantity BETWEEN 0 AND 50 THEN '*'
         WHEN stock_quantity BETWEEN 51 AND 100 THEN '**'

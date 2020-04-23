@@ -16,3 +16,28 @@ INSERT INTO cats (name, breed, age) VALUES
 DROP DATABASE IF EXISTS test_app;
 CREATE DATABASE test_app;
 use test_app;
+
+
+CREATE TABLE reviews (
+	review_id INT PRIMARY KEY AUTO_INCREMENT,
+	review_note VARCHAR(250),
+	order_id INT,
+	FOREIGN KEY (order_id) REFERENCES orders(id)
+	);
+	
+INSERT INTO reviews (review_note, order_id)
+
+
+-- implicit joins
+
+SELECT * FROM orders where customer_id = 
+	(
+	
+		SELECT id FROM customer WHERE lname = 'George'
+	);
+	
+-- Explicit joins
+SELECT * FROM orders
+	JOIN customer ON customer.id = orders.customer_id;
+	
+	
