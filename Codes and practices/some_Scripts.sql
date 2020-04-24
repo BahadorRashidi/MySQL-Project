@@ -37,7 +37,7 @@ SELECT * FROM orders where customer_id =
 	);
 	
 -- Explicit joins
-SELECT * FROM orders
-	JOIN customer ON customer.id = orders.customer_id;
+SELECT fname, lname, amount FROM customer
+	JOIN orders ON customer.id = orders.customer_id;
 	
 	
