@@ -122,10 +122,10 @@ SELECT title, stock_quantity,
     END AS STOCK
 FROM books; 
 ```
+## If you want to use the concept of where after group by, we use HAVING instead
 
 
-
-
+## IF(condition, value_if_true, value_if_false)
 
 
 

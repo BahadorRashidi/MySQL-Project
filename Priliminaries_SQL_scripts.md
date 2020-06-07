@@ -260,7 +260,7 @@ Ascending by default
 ```
 SELECT author_lname from books ORDER BY author_lname;
 ```
-to chabge it we can do it as ;
+to change it to descending we can do it as ;
 ```
 SELECT title from books ORDER BY title DESC;
 ```
@@ -270,7 +270,7 @@ What does the following mean?
 ```
 SELECT title, author_fname, author_lname from books ORDER BY 2;
 ```
-that number 2 refers to the secend argument
+that number 2 refers to the second argument
 
 
 If you wanna sort by two different argument
